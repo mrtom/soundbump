@@ -26,7 +26,6 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
 - (id)init
 {
   if (self = [super init]) {
-    // Use string with format to get rid of pointer warnings
     _facebookUUID = [[NSUUID alloc] initWithUUIDString:(NSString *)kFacebookRawUUID];
   }
   return self;

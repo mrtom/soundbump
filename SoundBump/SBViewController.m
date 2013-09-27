@@ -20,6 +20,7 @@ static const NSString *kDeezerAppID = @"125081";
 @property (nonatomic, strong) BeaconFinder *beaconFinder;
 @property (nonatomic, strong) UILabel *statusLabel;
 @property (nonatomic, strong) SBPusher *pusher;
+@property (nonatomic, strong) DeezerConnect *deezerConnect;
 
 @end
 
@@ -49,7 +50,7 @@ SystemSoundID phonecitAudioClipObject;
   [self.beaconFinder startFinding];
   
   // Connect with Deezer
-  DeezerConnect *_deezerConnect = [[DeezerConnect alloc] initWithAppId:kDeezerAppID andDelegate:self];
+  _deezerConnect = [[DeezerConnect alloc] initWithAppId:(NSString *)kDeezerAppID andDelegate:self];
   
   NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"email", @"offline_access", nil];
   [_deezerConnect authorize:permissionsArray];

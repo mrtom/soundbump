@@ -37,10 +37,10 @@ static const NSString *kDevChannelName = @"private-sound-bump-dev";
   
   _pusherClient = [PTPusher pusherWithKey:@"dcc6ab0c66a103f8d7e5" delegate:self encrypted:YES];
   _pusherClient.reconnectAutomatically = YES;
-  [_pusherClient subscribeToChannelNamed:kDevChannelName];
+  [_pusherClient subscribeToChannelNamed:(NSString *)kDevChannelName];
   //[_pusherClient subscribeToPrivateChannelNamed:kDevChannelName];
   _pusherClient.authorizationURL = [NSURL URLWithString:@"http://telliott.net/soundbump/auth.php"];
-  [_pusherClient bindToEventNamed:kEventName target:self action:@selector(receiveBeat)];
+  [_pusherClient bindToEventNamed:(NSString *)kEventName target:self action:@selector(receiveBeat)];
   
   [_pusherClient bindToEventNamed:@"pusher:subscription_succeeded" handleWithBlock:^(PTPusherEvent *event) {
     NSLog(@"Subscription to pusher channel succeeded");
@@ -53,7 +53,7 @@ static const NSString *kDevChannelName = @"private-sound-bump-dev";
 - (void)sendBeat
 {
   if (_isConnected) {
-    [_pusherClient sendEventNamed:kEventName data:@"{\"name\":\"blah\"}" channel:kDevChannelName];    
+    [_pusherClient sendEventNamed:(NSString *)kEventName data:@"{\"name\":\"blah\"}" channel:(NSString *)kDevChannelName];    
   }
 }
 
