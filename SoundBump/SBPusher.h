@@ -14,6 +14,7 @@
 @interface SBPusher : NSObject <PTPusherDelegate>
 
 @property (nonatomic, strong) id<SBPusherDelegate> delegate;
+@property (nonatomic, readonly) BOOL isConnected;
 
 - (void)sendBeat;
 

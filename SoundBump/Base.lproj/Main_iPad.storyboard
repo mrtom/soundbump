@@ -16,14 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkJ-gl-LKC">
-                                <rect key="frame" x="347" y="497" width="75" height="30"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkJ-gl-LKC">
+                                <rect key="frame" x="234" y="452" width="300" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3295582426" green="1" blue="0.3605727594" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="DCn-ed-nvI"/>
-                                    <constraint firstAttribute="height" constant="30" id="ev0-Zc-tIv"/>
+                                    <constraint firstAttribute="height" constant="120" id="W8e-u5-6XV"/>
+                                    <constraint firstAttribute="width" constant="300" id="r1k-Fd-FDs"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <state key="normal" title="Beat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -32,13 +33,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJT-Lh-gco">
-                                <rect key="frame" x="243" y="562" width="283" height="184"/>
+                                <rect key="frame" x="84" y="572" width="600" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.66666666669999997" green="0.14652973380000001" blue="0.39106075200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="184" id="abq-kF-O6m"/>
-                                    <constraint firstAttribute="width" constant="283" id="fGA-nq-hlx"/>
+                                    <constraint firstAttribute="height" constant="400" id="QG9-Ct-WcW"/>
+                                    <constraint firstAttribute="width" constant="600" id="T3W-tU-24n"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <state key="normal" title="BOOM!">
                                     <color key="titleColor" red="0.96223250680000005" green="0.50409448850000005" blue="0.093460313520000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,10 +49,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KJT-Lh-gco" secondAttribute="centerX" id="MuG-XA-OZJ"/>
-                            <constraint firstAttribute="centerY" secondItem="PkJ-gl-LKC" secondAttribute="centerY" id="VH9-Jt-qrN"/>
-                            <constraint firstAttribute="centerX" secondItem="PkJ-gl-LKC" secondAttribute="centerX" id="fLs-lB-z3f"/>
-                            <constraint firstItem="KJT-Lh-gco" firstAttribute="top" secondItem="PkJ-gl-LKC" secondAttribute="bottom" constant="35" id="y3M-85-kvX"/>
+                            <constraint firstAttribute="centerX" secondItem="PkJ-gl-LKC" secondAttribute="centerX" id="HCu-Nh-Szk"/>
+                            <constraint firstItem="KJT-Lh-gco" firstAttribute="top" secondItem="PkJ-gl-LKC" secondAttribute="bottom" id="UJS-i2-Tet"/>
+                            <constraint firstAttribute="centerY" secondItem="PkJ-gl-LKC" secondAttribute="centerY" id="kV8-Zl-aSj"/>
+                            <constraint firstAttribute="centerX" secondItem="KJT-Lh-gco" secondAttribute="centerX" id="wXC-e0-LAx"/>
                         </constraints>
                     </view>
                     <connections>

@@ -16,12 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVX-kx-I7O">
-                                <rect key="frame" x="132" y="269" width="56" height="30"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVX-kx-I7O">
+                                <rect key="frame" x="104" y="254" width="112" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3295582426" green="1" blue="0.3605727594" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="9XZ-t7-xFX"/>
+                                    <constraint firstAttribute="height" constant="60" id="6sG-Sw-Ttl"/>
+                                    <constraint firstAttribute="width" constant="112" id="Tn6-fw-fUb"/>
                                 </constraints>
                                 <state key="normal" title="Beat!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,12 +32,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm7-2O-fNJ">
-                                <rect key="frame" x="79" y="307" width="162" height="105"/>
+                                <rect key="frame" x="79" y="366" width="162" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.66666666669999997" green="0.14652973380000001" blue="0.39106075200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="Hkl-zQ-Y10"/>
-                                    <constraint firstAttribute="width" constant="162" id="j2m-Ir-9LJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="162" id="Dem-2y-Wro"/>
+                                    <constraint firstAttribute="width" constant="162" id="Pcr-4c-wPs"/>
+                                    <constraint firstAttribute="height" constant="105" id="wdd-H5-UuH"/>
                                 </constraints>
                                 <state key="normal" title="BOOM!">
                                     <color key="titleColor" red="0.96223250680000005" green="0.50409448850000005" blue="0.093460313520000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,10 +48,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="eVX-kx-I7O" secondAttribute="centerX" id="92i-ff-udP"/>
-                            <constraint firstAttribute="centerY" secondItem="eVX-kx-I7O" secondAttribute="centerY" id="9Em-RV-BS1"/>
-                            <constraint firstAttribute="centerX" secondItem="bm7-2O-fNJ" secondAttribute="centerX" id="NbP-iD-eEn"/>
-                            <constraint firstItem="bm7-2O-fNJ" firstAttribute="top" secondItem="eVX-kx-I7O" secondAttribute="bottom" constant="8" id="uPe-WH-UxP"/>
+                            <constraint firstAttribute="centerX" secondItem="bm7-2O-fNJ" secondAttribute="centerX" id="7qo-Qj-afc"/>
+                            <constraint firstItem="bm7-2O-fNJ" firstAttribute="top" secondItem="eVX-kx-I7O" secondAttribute="bottom" constant="52" id="QpJ-kx-KGw"/>
+                            <constraint firstAttribute="centerY" secondItem="eVX-kx-I7O" secondAttribute="centerY" id="Rds-DM-yAo"/>
+                            <constraint firstAttribute="centerX" secondItem="eVX-kx-I7O" secondAttribute="centerX" id="eJp-e3-v2f"/>
                         </constraints>
                     </view>
                     <connections>

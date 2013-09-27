@@ -33,6 +33,8 @@ static const NSString *kDevChannelName = @"private-sound-bump-dev";
 
 - (void)initCommon
 {
+  _isConnected = NO;
+  
   _pusherClient = [PTPusher pusherWithKey:@"dcc6ab0c66a103f8d7e5" delegate:self encrypted:YES];
   _pusherClient.reconnectAutomatically = YES;
   [_pusherClient subscribeToChannelNamed:kDevChannelName];
@@ -50,7 +52,9 @@ static const NSString *kDevChannelName = @"private-sound-bump-dev";
 
 - (void)sendBeat
 {
-  [_pusherClient sendEventNamed:kEventName data:@"{\"name\":\"blah\"}" channel:kDevChannelName];
+  if (_isConnected) {
+    [_pusherClient sendEventNamed:kEventName data:@"{\"name\":\"blah\"}" channel:kDevChannelName];    
+  }
 }
 
 #pragma mark - Private instance methods
@@ -60,20 +64,33 @@ static const NSString *kDevChannelName = @"private-sound-bump-dev";
   [self.delegate receiveBeat];
 }
 
+- (void)setIsConnected:(BOOL)isConnected
+{
+  _isConnected = isConnected;
+  if (isConnected) {
+    [self.delegate pusherOnline];
+  } else {
+    [self.delegate pusherOnline];
+  }
+}
+
 #pragma mark - PTPusherDelegate methods
 
 - (void)pusher:(PTPusher *)pusher connectionDidConnect:(PTPusherConnection *)connection
 {
+  self.isConnected = YES;
   NSLog(@"Pusher connected");
 }
 
 - (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection didDisconnectWithError:(NSError *)error
 {
+  self.isConnected = NO;
   NSLog(@"Pusher disconnected with error %@", error);
 }
 
 - (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection failedWithError:(NSError *)error
 {
+  self.isConnected = NO;
   NSLog(@"Pusher failed with error %@", error);
 }
 

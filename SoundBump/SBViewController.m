@@ -131,4 +131,15 @@ SystemSoundID phonecitAudioClipObject;
   _boomBox.alpha = 0.0f;
 }
 
+- (void)pusherOnline
+{
+  self.BeatButton.alpha = 1.0f;
+}
+
+- (void)pusherOffline
+{
+  self.BeatButton.alpha = 0.0f;
+}
+
+
 @end

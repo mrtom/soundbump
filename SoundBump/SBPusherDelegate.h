@@ -13,5 +13,7 @@
 @required
 
 - (void)receiveBeat;
+- (void)pusherOnline;
+- (void)pusherOffline;
 
 @end
