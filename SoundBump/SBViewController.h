@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SBViewController : UIViewController
+
+#import "DeezerConnect.h"
+
+@class DeezerUser;
+
+@protocol DeezerSessionConnectionDelegate;
+
+@interface SBViewController : UIViewController<DeezerSessionDelegate, DeezerRequestDelegate>
 
 @end

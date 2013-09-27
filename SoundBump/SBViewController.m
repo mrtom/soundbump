@@ -10,6 +10,7 @@
 #import "BeaconFinder.h"
 
 
+static const NSString *kDeezerAppID = @"125081";
 
 @interface SBViewController () <BeaconFinderDelegate>
 
@@ -39,6 +40,13 @@
   self.beaconFinder = [[BeaconFinder alloc] init];
   self.beaconFinder.delegate = self;
   [self.beaconFinder startFinding];
+  
+  // Connect with Deezer
+  DeezerConnect *_deezerConnect = [[DeezerConnect alloc] initWithAppId:kDeezerAppID andDelegate:self];
+  
+  /* List of permissions available from the Deezer SDK web site */
+  NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"email", @"offline_access", nil];
+  [_deezerConnect authorize:permissionsArray];
 }
 
 
@@ -63,5 +71,18 @@
   self.view.backgroundColor = [UIColor blackColor];
 }
 
+#pragma mark - DeezerSessionDelegate methods
+
+- (void)deezerDidLogin {
+  NSLog(@"Deezer did login");
+}
+
+- (void)deezerDidNotLogin:(BOOL)cancelled {
+  NSLog(@"Deezer Did not login %@", cancelled ? @"Cancelled" : @"Not Cancelled");
+}
+
+- (void)deezerDidLogout {
+  NSLog(@"Deezer Did logout");
+}
 
 @end

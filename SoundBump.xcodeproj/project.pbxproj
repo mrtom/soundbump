@@ -22,6 +22,19 @@
 		459A16D417F50BEB00FFA6E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A16B317F50BEB00FFA6E5 /* UIKit.framework */; };
 		459A16DC17F50BEB00FFA6E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459A16DA17F50BEB00FFA6E5 /* InfoPlist.strings */; };
 		459A16DE17F50BEB00FFA6E5 /* SoundBumpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A16DD17F50BEB00FFA6E5 /* SoundBumpTests.m */; };
+		459A170117F5165500FFA6E5 /* DeezerLibClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 459A16FF17F5165500FFA6E5 /* DeezerLibClose.png */; };
+		459A170217F5165500FFA6E5 /* DeezerLibClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459A170017F5165500FFA6E5 /* DeezerLibClose@2x.png */; };
+		459A170417F5169A00FFA6E5 /* libDeezer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A170317F5169A00FFA6E5 /* libDeezer.a */; };
+		459A174C17F51B7500FFA6E5 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A173817F51B7500FFA6E5 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A174D17F51B7500FFA6E5 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A173A17F51B7500FFA6E5 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A174E17F51B7500FFA6E5 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A173C17F51B7500FFA6E5 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A174F17F51B7500FFA6E5 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A173E17F51B7500FFA6E5 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A175017F51B7500FFA6E5 /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174017F51B7500FFA6E5 /* AFJSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A175117F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174217F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A175217F51B7500FFA6E5 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174517F51B7500FFA6E5 /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A175317F51B7500FFA6E5 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174717F51B7500FFA6E5 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A175417F51B7500FFA6E5 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174917F51B7500FFA6E5 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A175517F51B7500FFA6E5 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174B17F51B7500FFA6E5 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C7F916E117F51060008DBC62 /* BeaconAdvertiser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */; };
 		C7F916E917F538B2008DBC62 /* BeaconFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F916E817F538B2008DBC62 /* BeaconFinder.m */; };
 /* End PBXBuildFile section */
@@ -57,6 +70,38 @@
 		459A16D917F50BEB00FFA6E5 /* SoundBumpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoundBumpTests-Info.plist"; sourceTree = "<group>"; };
 		459A16DB17F50BEB00FFA6E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		459A16DD17F50BEB00FFA6E5 /* SoundBumpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundBumpTests.m; sourceTree = "<group>"; };
+		459A16F817F5165500FFA6E5 /* BufferDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferDelegate.h; sourceTree = "<group>"; };
+		459A16F917F5165500FFA6E5 /* DeezerConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeezerConnect.h; sourceTree = "<group>"; };
+		459A16FA17F5165500FFA6E5 /* DeezerOAuthDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeezerOAuthDelegate.h; sourceTree = "<group>"; };
+		459A16FB17F5165500FFA6E5 /* DeezerRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeezerRequestDelegate.h; sourceTree = "<group>"; };
+		459A16FC17F5165500FFA6E5 /* PlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDelegate.h; sourceTree = "<group>"; };
+		459A16FD17F5165500FFA6E5 /* PlayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerFactory.h; sourceTree = "<group>"; };
+		459A16FF17F5165500FFA6E5 /* DeezerLibClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeezerLibClose.png; sourceTree = "<group>"; };
+		459A170017F5165500FFA6E5 /* DeezerLibClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DeezerLibClose@2x.png"; sourceTree = "<group>"; };
+		459A170317F5169A00FFA6E5 /* libDeezer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDeezer.a; sourceTree = "<group>"; };
+		459A170617F5189E00FFA6E5 /* SBDeezerSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBDeezerSession.h; sourceTree = "<group>"; };
+		459A170717F5189E00FFA6E5 /* SBDeezerSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBDeezerSession.m; sourceTree = "<group>"; };
+		459A173717F51B7500FFA6E5 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		459A173817F51B7500FFA6E5 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		459A173917F51B7500FFA6E5 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		459A173A17F51B7500FFA6E5 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		459A173B17F51B7500FFA6E5 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		459A173C17F51B7500FFA6E5 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		459A173D17F51B7500FFA6E5 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		459A173E17F51B7500FFA6E5 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		459A173F17F51B7500FFA6E5 /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
+		459A174017F51B7500FFA6E5 /* AFJSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONUtilities.m; sourceTree = "<group>"; };
+		459A174117F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		459A174217F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		459A174317F51B7500FFA6E5 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		459A174417F51B7500FFA6E5 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		459A174517F51B7500FFA6E5 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		459A174617F51B7500FFA6E5 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		459A174717F51B7500FFA6E5 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		459A174817F51B7500FFA6E5 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		459A174917F51B7500FFA6E5 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		459A174A17F51B7500FFA6E5 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		459A174B17F51B7500FFA6E5 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		C7F916DF17F51060008DBC62 /* BeaconAdvertiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconAdvertiser.h; sourceTree = "<group>"; };
 		C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconAdvertiser.m; sourceTree = "<group>"; };
 		C7F916E717F538B2008DBC62 /* BeaconFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconFinder.h; sourceTree = "<group>"; };
@@ -68,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459A170417F5169A00FFA6E5 /* libDeezer.a in Frameworks */,
 				459A16B217F50BEB00FFA6E5 /* CoreGraphics.framework in Frameworks */,
 				459A16B417F50BEB00FFA6E5 /* UIKit.framework in Frameworks */,
 				459A16B017F50BEB00FFA6E5 /* Foundation.framework in Frameworks */,
@@ -90,10 +136,13 @@
 		459A16A317F50BEB00FFA6E5 = {
 			isa = PBXGroup;
 			children = (
+				459A173117F51B1100FFA6E5 /* ThirdParty */,
+				459A170517F5187900FFA6E5 /* Deezer */,
 				459A16B517F50BEB00FFA6E5 /* SoundBump */,
 				459A16D717F50BEB00FFA6E5 /* SoundBumpTests */,
 				459A16AE17F50BEB00FFA6E5 /* Frameworks */,
 				459A16AD17F50BEB00FFA6E5 /* Products */,
+				459A16F617F5165500FFA6E5 /* LibDeezer */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +212,85 @@
 				459A16DA17F50BEB00FFA6E5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		459A16F617F5165500FFA6E5 /* LibDeezer */ = {
+			isa = PBXGroup;
+			children = (
+				459A170317F5169A00FFA6E5 /* libDeezer.a */,
+				459A16F717F5165500FFA6E5 /* Headers */,
+				459A16FE17F5165500FFA6E5 /* Resources */,
+			);
+			path = LibDeezer;
+			sourceTree = "<group>";
+		};
+		459A16F717F5165500FFA6E5 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				459A16F817F5165500FFA6E5 /* BufferDelegate.h */,
+				459A16F917F5165500FFA6E5 /* DeezerConnect.h */,
+				459A16FA17F5165500FFA6E5 /* DeezerOAuthDelegate.h */,
+				459A16FB17F5165500FFA6E5 /* DeezerRequestDelegate.h */,
+				459A16FC17F5165500FFA6E5 /* PlayerDelegate.h */,
+				459A16FD17F5165500FFA6E5 /* PlayerFactory.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		459A16FE17F5165500FFA6E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				459A16FF17F5165500FFA6E5 /* DeezerLibClose.png */,
+				459A170017F5165500FFA6E5 /* DeezerLibClose@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		459A170517F5187900FFA6E5 /* Deezer */ = {
+			isa = PBXGroup;
+			children = (
+				459A170617F5189E00FFA6E5 /* SBDeezerSession.h */,
+				459A170717F5189E00FFA6E5 /* SBDeezerSession.m */,
+			);
+			name = Deezer;
+			path = SoundBump/Deezer;
+			sourceTree = "<group>";
+		};
+		459A173117F51B1100FFA6E5 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				459A173617F51B7500FFA6E5 /* AFNetworking */,
+			);
+			name = ThirdParty;
+			path = SoundBump/ThirdParty;
+			sourceTree = "<group>";
+		};
+		459A173617F51B7500FFA6E5 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				459A173717F51B7500FFA6E5 /* AFHTTPClient.h */,
+				459A173817F51B7500FFA6E5 /* AFHTTPClient.m */,
+				459A173917F51B7500FFA6E5 /* AFHTTPRequestOperation.h */,
+				459A173A17F51B7500FFA6E5 /* AFHTTPRequestOperation.m */,
+				459A173B17F51B7500FFA6E5 /* AFImageRequestOperation.h */,
+				459A173C17F51B7500FFA6E5 /* AFImageRequestOperation.m */,
+				459A173D17F51B7500FFA6E5 /* AFJSONRequestOperation.h */,
+				459A173E17F51B7500FFA6E5 /* AFJSONRequestOperation.m */,
+				459A173F17F51B7500FFA6E5 /* AFJSONUtilities.h */,
+				459A174017F51B7500FFA6E5 /* AFJSONUtilities.m */,
+				459A174117F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.h */,
+				459A174217F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.m */,
+				459A174317F51B7500FFA6E5 /* AFNetworking.h */,
+				459A174417F51B7500FFA6E5 /* AFPropertyListRequestOperation.h */,
+				459A174517F51B7500FFA6E5 /* AFPropertyListRequestOperation.m */,
+				459A174617F51B7500FFA6E5 /* AFURLConnectionOperation.h */,
+				459A174717F51B7500FFA6E5 /* AFURLConnectionOperation.m */,
+				459A174817F51B7500FFA6E5 /* AFXMLRequestOperation.h */,
+				459A174917F51B7500FFA6E5 /* AFXMLRequestOperation.m */,
+				459A174A17F51B7500FFA6E5 /* UIImageView+AFNetworking.h */,
+				459A174B17F51B7500FFA6E5 /* UIImageView+AFNetworking.m */,
+			);
+			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				459A16C617F50BEB00FFA6E5 /* Main_iPad.storyboard in Resources */,
+				459A170117F5165500FFA6E5 /* DeezerLibClose.png in Resources */,
+				459A170217F5165500FFA6E5 /* DeezerLibClose@2x.png in Resources */,
 				459A16CB17F50BEB00FFA6E5 /* Images.xcassets in Resources */,
 				459A16C317F50BEB00FFA6E5 /* Main_iPhone.storyboard in Resources */,
 				459A16BA17F50BEB00FFA6E5 /* InfoPlist.strings in Resources */,
@@ -264,11 +394,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459A175317F51B7500FFA6E5 /* AFURLConnectionOperation.m in Sources */,
+				459A174F17F51B7500FFA6E5 /* AFJSONRequestOperation.m in Sources */,
+				459A174E17F51B7500FFA6E5 /* AFImageRequestOperation.m in Sources */,
+				459A175017F51B7500FFA6E5 /* AFJSONUtilities.m in Sources */,
+				459A175417F51B7500FFA6E5 /* AFXMLRequestOperation.m in Sources */,
 				459A16BC17F50BEB00FFA6E5 /* main.m in Sources */,
+				459A174D17F51B7500FFA6E5 /* AFHTTPRequestOperation.m in Sources */,
+				459A175517F51B7500FFA6E5 /* UIImageView+AFNetworking.m in Sources */,
 				459A16C917F50BEB00FFA6E5 /* SBViewController.m in Sources */,
 				C7F916E117F51060008DBC62 /* BeaconAdvertiser.m in Sources */,
 				C7F916E917F538B2008DBC62 /* BeaconFinder.m in Sources */,
 				459A16C017F50BEB00FFA6E5 /* SBAppDelegate.m in Sources */,
+				459A175117F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				459A175217F51B7500FFA6E5 /* AFPropertyListRequestOperation.m in Sources */,
+				459A174C17F51B7500FFA6E5 /* AFHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,12 +543,19 @@
 		459A16E217F50BEB00FFA6E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundBump/SoundBump-Prefix.pch";
 				INFOPLIST_FILE = "SoundBump/SoundBump-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$SRCROOT/../**";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -421,7 +568,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundBump/SoundBump-Prefix.pch";
 				INFOPLIST_FILE = "SoundBump/SoundBump-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$SRCROOT/../**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
