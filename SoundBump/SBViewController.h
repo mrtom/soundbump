@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-
 #import "DeezerConnect.h"
-#import "PTPusherDelegate.h"
+#import "SBPusherDelegate.h"
 
 @class DeezerUser;
 
 @protocol DeezerSessionConnectionDelegate;
 
-@interface SBViewController : UIViewController<DeezerSessionDelegate, DeezerRequestDelegate, PTPusherDelegate>
+@interface SBViewController : UIViewController<DeezerSessionDelegate, DeezerRequestDelegate, SBPusherDelegate>
+
+@property (strong, nonatomic) IBOutlet UIButton *BeatButton;
+@property (strong, nonatomic) IBOutlet UIButton *boomBox;
+
+- (IBAction)sendBeat:(id)sender;
 
 @end

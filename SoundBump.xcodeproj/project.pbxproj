@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4508D8C017F5477300B1A0AA /* SBPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4508D8BF17F5477300B1A0AA /* SBPusher.m */; };
+		4578F45417F563350013F60E /* tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4578F45317F563350013F60E /* tap.aif */; };
+		4578F45617F563480013F60E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4578F45517F563480013F60E /* AVFoundation.framework */; };
+		4578F45B17F563B60013F60E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4578F45A17F563B60013F60E /* AudioToolbox.framework */; };
 		459A16B017F50BEB00FFA6E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A16AF17F50BEB00FFA6E5 /* Foundation.framework */; };
 		459A16B217F50BEB00FFA6E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A16B117F50BEB00FFA6E5 /* CoreGraphics.framework */; };
 		459A16B417F50BEB00FFA6E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A16B317F50BEB00FFA6E5 /* UIKit.framework */; };
@@ -55,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4508D8BE17F5477300B1A0AA /* SBPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPusher.h; sourceTree = "<group>"; };
+		4508D8BF17F5477300B1A0AA /* SBPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPusher.m; sourceTree = "<group>"; };
+		4508D8C117F5484F00B1A0AA /* SBPusherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPusherDelegate.h; sourceTree = "<group>"; };
+		4578F45317F563350013F60E /* tap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = tap.aif; sourceTree = "<group>"; };
+		4578F45517F563480013F60E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4578F45A17F563B60013F60E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		459A16AC17F50BEB00FFA6E5 /* SoundBump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundBump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459A16AF17F50BEB00FFA6E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		459A16B117F50BEB00FFA6E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4578F45B17F563B60013F60E /* AudioToolbox.framework in Frameworks */,
+				4578F45617F563480013F60E /* AVFoundation.framework in Frameworks */,
 				459A179017F5398600FFA6E5 /* libPusher-combined.a in Frameworks */,
 				459A177C17F5392900FFA6E5 /* libicucore.dylib in Frameworks */,
 				459A177A17F5391000FFA6E5 /* SystemConfiguration.framework in Frameworks */,
@@ -191,6 +203,8 @@
 		459A16AE17F50BEB00FFA6E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4578F45A17F563B60013F60E /* AudioToolbox.framework */,
+				4578F45517F563480013F60E /* AVFoundation.framework */,
 				459A178F17F5398600FFA6E5 /* libPusher-combined.a */,
 				459A177B17F5392900FFA6E5 /* libicucore.dylib */,
 				459A177917F5391000FFA6E5 /* SystemConfiguration.framework */,
@@ -217,6 +231,9 @@
 				C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */,
 				C7F916E717F538B2008DBC62 /* BeaconFinder.h */,
 				C7F916E817F538B2008DBC62 /* BeaconFinder.m */,
+				4508D8C117F5484F00B1A0AA /* SBPusherDelegate.h */,
+				4508D8BE17F5477300B1A0AA /* SBPusher.h */,
+				4508D8BF17F5477300B1A0AA /* SBPusher.m */,
 				459A16CA17F50BEB00FFA6E5 /* Images.xcassets */,
 				459A16B617F50BEB00FFA6E5 /* Supporting Files */,
 			);
@@ -226,6 +243,7 @@
 		459A16B617F50BEB00FFA6E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4578F45317F563350013F60E /* tap.aif */,
 				459A16B717F50BEB00FFA6E5 /* SoundBump-Info.plist */,
 				459A16B817F50BEB00FFA6E5 /* InfoPlist.strings */,
 				459A16BB17F50BEB00FFA6E5 /* main.m */,
@@ -437,6 +455,7 @@
 				459A170217F5165500FFA6E5 /* DeezerLibClose@2x.png in Resources */,
 				459A16CB17F50BEB00FFA6E5 /* Images.xcassets in Resources */,
 				459A16C317F50BEB00FFA6E5 /* Main_iPhone.storyboard in Resources */,
+				4578F45417F563350013F60E /* tap.aif in Resources */,
 				459A16BA17F50BEB00FFA6E5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				459A175317F51B7500FFA6E5 /* AFURLConnectionOperation.m in Sources */,
+				4508D8C017F5477300B1A0AA /* SBPusher.m in Sources */,
 				459A174F17F51B7500FFA6E5 /* AFJSONRequestOperation.m in Sources */,
 				459A174E17F51B7500FFA6E5 /* AFImageRequestOperation.m in Sources */,
 				459A175017F51B7500FFA6E5 /* AFJSONUtilities.m in Sources */,

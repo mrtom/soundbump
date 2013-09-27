@@ -7,23 +7,27 @@
 //
 
 #import "SBViewController.h"
-#import "BeaconFinder.h"
 
-#import "PTPusher.h"
+#import <AudioToolbox/AudioToolbox.h>
+
+#import "BeaconFinder.h"
+#import "SBPusher.h"
 
 static const NSString *kDeezerAppID = @"125081";
-static const NSString *kPusherAppKey = @"dcc6ab0c66a103f8d7e5";
 
 @interface SBViewController () <BeaconFinderDelegate>
 
 @property (nonatomic, strong) BeaconFinder *beaconFinder;
 @property (nonatomic, strong) UILabel *statusLabel;
-@property (nonatomic, strong) PTPusher *pusherClient;
+@property (nonatomic, strong) SBPusher *pusher;
 
 @end
 
 @implementation SBViewController
 
+NSURL *phoneticAudioClip;
+CFURLRef phonecitAudioClipRef;
+SystemSoundID phonecitAudioClipObject;
 
 - (void)viewDidLoad
 {
@@ -50,10 +54,16 @@ static const NSString *kPusherAppKey = @"dcc6ab0c66a103f8d7e5";
   NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"email", @"offline_access", nil];
   [_deezerConnect authorize:permissionsArray];
   
-  // Setup Pusher
-  _pusherClient = [PTPusher pusherWithKey:kPusherAppKey delegate:self encrypted:YES];
+  _pusher = [SBPusher new];
+  _pusher.delegate = self;
 }
 
+#pragma mark - IBActions
+
+- (IBAction)sendBeat:(id)sender
+{
+  [_pusher sendBeat];
+}
 
 #pragma mark - BeaconFinderDelegate
 
@@ -100,26 +110,25 @@ static const NSString *kPusherAppKey = @"dcc6ab0c66a103f8d7e5";
   NSLog(@"Received response from Deezer");
 }
 
-#pragma mark - PTPusherDelegate methods
+#pragma mark - SBPusher delegate methods
 
-- (void)pusher:(PTPusher *)pusher connectionDidConnect:(PTPusherConnection *)connection
+- (void)receiveBeat
 {
-  NSLog(@"Pusher connected");
+  _boomBox.alpha = 1.0f;
+  [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(revertBeat:) userInfo:nil repeats:NO];
+  
+  // Play your 'beat'
+  phoneticAudioClip = [[NSBundle mainBundle] URLForResource: @"tap" withExtension: @"aif"];
+  phonecitAudioClipRef = (CFURLRef)CFBridgingRetain(phoneticAudioClip);
+  
+  AudioServicesCreateSystemSoundID (phonecitAudioClipRef, &phonecitAudioClipObject);
+  AudioServicesAddSystemSoundCompletion(phonecitAudioClipObject, NULL, NULL, nil, (__bridge void *)self);
+  AudioServicesPlaySystemSound(phonecitAudioClipObject);
 }
 
-- (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection didDisconnectWithError:(NSError *)error
+- (void)revertBeat:(id)userInfo
 {
-  NSLog(@"Pusher disconnected with error %@", error);
-}
-
-- (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection failedWithError:(NSError *)error
-{
-  NSLog(@"Pusher failed with error %@", error);
-}
-
-- (void)pusher:(PTPusher *)pusher connectionWillReconnect:(PTPusherConnection *)connection afterDelay:(NSTimeInterval)delay
-{
-  NSLog(@"Pusher will try and reconnect, after a delay of %f seconds", delay);
+  _boomBox.alpha = 0.0f;
 }
 
 @end
