@@ -15,7 +15,7 @@
 
 @protocol DeezerSessionConnectionDelegate;
 
-@interface SBViewController : UIViewController<DeezerSessionDelegate, DeezerRequestDelegate, SBPusherDelegate>
+@interface SBViewController : UIViewController<DeezerSessionDelegate, SBPusherDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *BeatButton;
 @property (strong, nonatomic) IBOutlet UIButton *boomBox;

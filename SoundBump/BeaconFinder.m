@@ -102,7 +102,7 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
 
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
 {
-  NSLog(@"Did fail");
+  NSLog(@"Location manager monitoring did fail with error %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
@@ -113,7 +113,7 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error
 {
-  NSLog(@"did fail");
+  NSLog(@"Location manager did fail with error %@", error);
 }
 
 @end

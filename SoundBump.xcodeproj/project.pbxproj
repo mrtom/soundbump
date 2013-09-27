@@ -11,6 +11,8 @@
 		4578F45417F563350013F60E /* tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4578F45317F563350013F60E /* tap.aif */; };
 		4578F45617F563480013F60E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4578F45517F563480013F60E /* AVFoundation.framework */; };
 		4578F45B17F563B60013F60E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4578F45A17F563B60013F60E /* AudioToolbox.framework */; };
+		4578F45E17F575170013F60E /* DeezerLibClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 4578F45C17F575170013F60E /* DeezerLibClose.png */; };
+		4578F45F17F575170013F60E /* DeezerLibClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4578F45D17F575170013F60E /* DeezerLibClose@2x.png */; };
 		459A16B017F50BEB00FFA6E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A16AF17F50BEB00FFA6E5 /* Foundation.framework */; };
 		459A16B217F50BEB00FFA6E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A16B117F50BEB00FFA6E5 /* CoreGraphics.framework */; };
 		459A16B417F50BEB00FFA6E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A16B317F50BEB00FFA6E5 /* UIKit.framework */; };
@@ -65,6 +67,8 @@
 		4578F45317F563350013F60E /* tap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = tap.aif; sourceTree = "<group>"; };
 		4578F45517F563480013F60E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4578F45A17F563B60013F60E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4578F45C17F575170013F60E /* DeezerLibClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DeezerLibClose.png; path = LibDeezer/Resources/DeezerLibClose.png; sourceTree = SOURCE_ROOT; };
+		4578F45D17F575170013F60E /* DeezerLibClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeezerLibClose@2x.png"; path = "LibDeezer/Resources/DeezerLibClose@2x.png"; sourceTree = SOURCE_ROOT; };
 		459A16AC17F50BEB00FFA6E5 /* SoundBump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundBump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459A16AF17F50BEB00FFA6E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		459A16B117F50BEB00FFA6E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -243,6 +247,8 @@
 		459A16B617F50BEB00FFA6E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4578F45C17F575170013F60E /* DeezerLibClose.png */,
+				4578F45D17F575170013F60E /* DeezerLibClose@2x.png */,
 				4578F45317F563350013F60E /* tap.aif */,
 				459A16B717F50BEB00FFA6E5 /* SoundBump-Info.plist */,
 				459A16B817F50BEB00FFA6E5 /* InfoPlist.strings */,
@@ -451,6 +457,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				459A16C617F50BEB00FFA6E5 /* Main_iPad.storyboard in Resources */,
+				4578F45E17F575170013F60E /* DeezerLibClose.png in Resources */,
+				4578F45F17F575170013F60E /* DeezerLibClose@2x.png in Resources */,
 				459A170117F5165500FFA6E5 /* DeezerLibClose.png in Resources */,
 				459A170217F5165500FFA6E5 /* DeezerLibClose@2x.png in Resources */,
 				459A16CB17F50BEB00FFA6E5 /* Images.xcassets in Resources */,
@@ -635,7 +643,7 @@
 				GCC_PREFIX_HEADER = "SoundBump/SoundBump-Prefix.pch";
 				INFOPLIST_FILE = "SoundBump/SoundBump-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$SRCROOT/**";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher/libPusher-combined.a",
