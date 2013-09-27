@@ -7,20 +7,16 @@
 //
 
 #import "SBViewController.h"
-
-#import <CoreLocation/CoreLocation.h>
+#import "BeaconFinder.h"
 
 #import "PTPusher.h"
 
-static const NSString *kFacebookRawUUID = @"064149EF-EAD1-4CFD-BECD-E0544EF95F22";
-static const NSString *kFacebookPageRegionID = @"FacebookPage";
 static const NSString *kDeezerAppID = @"125081";
 static const NSString *kPusherAppKey = @"dcc6ab0c66a103f8d7e5";
 
-@interface SBViewController ()
+@interface SBViewController () <BeaconFinderDelegate>
 
-@property CLLocationManager *locationManager;
-@property (nonatomic, strong, readonly) NSUUID *facebookUUID;
+@property (nonatomic, strong) BeaconFinder *beaconFinder;
 @property (nonatomic, strong) UILabel *statusLabel;
 @property (nonatomic, strong) PTPusher *pusherClient;
 
@@ -28,46 +24,25 @@ static const NSString *kPusherAppKey = @"dcc6ab0c66a103f8d7e5";
 
 @implementation SBViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-    [self initCommon];
-  }
-  return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-    [self initCommon];
-  }
-  return self;
-}
-
-- (void)initCommon
-{
-  _facebookUUID = [[NSUUID alloc] initWithUUIDString:kFacebookRawUUID];
-}
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
-  self.locationManager = [CLLocationManager new];
-  self.locationManager.delegate = self;
+  self.view.backgroundColor = [UIColor blackColor];
+
   
   UILabel *statusLabel = [[UILabel alloc] init];
   statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   statusLabel.frame = CGRectMake(0, 70, self.view.bounds.size.width, self.view.bounds.size.height - 70);
   statusLabel.font = [UIFont boldSystemFontOfSize:60];
   statusLabel.numberOfLines = 3;
-  statusLabel.textAlignment = UITextAlignmentCenter;
+  statusLabel.textAlignment = NSTextAlignmentCenter;
   [self.view addSubview:statusLabel];
   self.statusLabel = statusLabel;
   
-  [self registerBeaconRegionWithUUID:_facebookUUID andIdentifier:[NSString stringWithFormat:@"%@", kFacebookPageRegionID]];
+  self.beaconFinder = [[BeaconFinder alloc] init];
+  self.beaconFinder.delegate = self;
+  [self.beaconFinder startFinding];
   
   // Connect with Deezer
   DeezerConnect *_deezerConnect = [[DeezerConnect alloc] initWithAppId:kDeezerAppID andDelegate:self];
@@ -79,96 +54,26 @@ static const NSString *kPusherAppKey = @"dcc6ab0c66a103f8d7e5";
   _pusherClient = [PTPusher pusherWithKey:kPusherAppKey delegate:self encrypted:YES];
 }
 
-- (void)viewDidUnload
+
+#pragma mark - BeaconFinderDelegate
+
+- (void)beaconFinder:(BeaconFinder *)beaconFinder didFindWithProximity:(CLProximity)proximity
 {
-  self.locationManager = nil;
-}
-
--(void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
-- (void)registerBeaconRegionWithUUID:(NSUUID *)proximityUUID andIdentifier:(NSString*)identifier {
-  
-  // Create the beacon region to be monitored.
-  CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc]
-                                  initWithProximityUUID:proximityUUID
-                                  identifier:identifier];
-  
-  
-  // Register the beacon region with the location manager.
-  [self.locationManager startMonitoringForRegion:beaconRegion];
-  [self.locationManager startRangingBeaconsInRegion:beaconRegion];
-  
-  NSLog(@"Started monitoring region");
-}
-
-#pragma mark - CLLocationManagerDelegate methods
-
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
-{
-  NSLog(@"Entered Beacon region!");
-}
-
-- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
-{
-  NSLog(@"Exited Beacon region!");
-}
-
-- (void)locationManager:(CLLocationManager *)manager
-        didRangeBeacons:(NSArray *)beacons
-               inRegion:(CLBeaconRegion *)region {
-  
-  if ([beacons count] > 0) {
-    CLBeacon *nearestExhibit = [beacons firstObject];
-    
-    // Present the exhibit-specific UI only when
-    // the user is relatively close to the exhibit.
-    CLProximity proximity = nearestExhibit.proximity;
-    if (proximity == CLProximityImmediate) {
-      self.statusLabel.text = @"Say 'HI' to Philip Su!!!";
-      self.view.backgroundColor = [UIColor greenColor];
-    }
-    else {
-      self.statusLabel.text = @"Say 'BYE' to Philip Su.  :(";
-      self.view.backgroundColor = [UIColor redColor];
-    }
-    NSLog(@"proximity = %d", nearestExhibit.proximity);
-    
-    //    if (CLProximityNear == nearestExhibit.proximity) {
-    //      //[self presentExhibitInfoWithMajorValue:nearestExhibit.major.integerValue];
-    //      NSLog(@"Blah");
-    //    } else {
-    //      NSLog(@"Foo");
-    //      //[self dismissExhibitInfo];
-    //    }
+  if (proximity == CLProximityImmediate) {
+    self.view.backgroundColor = [UIColor greenColor];
   }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
-{
-  NSLog(@"Did determine state %d", state);
-  if (state == CLRegionStateInside) {
-    NSLog(@"Found!");
+  else if (proximity == CLProximityUnknown) {
+    self.view.backgroundColor = [UIColor blackColor];
   }
+  else {
+    self.view.backgroundColor = [UIColor redColor];
+  }
+  self.statusLabel.text = [NSString stringWithFormat:@"%d", (int)proximity];
 }
 
-- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
+- (void)beaconFinderDidExitRegion:(BeaconFinder *)beaconFinder
 {
-  NSLog(@"Region monitoring did fail with error %@", error);
-}
-
-- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
-{
-  NSLog(@"Monitoring started");
-}
-
-- (void)locationManager:(CLLocationManager *)manager
-       didFailWithError:(NSError *)error
-{
-  NSLog(@"Location manager did fail with warning %@", error);
+  self.view.backgroundColor = [UIColor blackColor];
 }
 
 #pragma mark - DeezerSessionDelegate methods

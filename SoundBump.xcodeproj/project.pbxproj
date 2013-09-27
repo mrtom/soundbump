@@ -40,6 +40,8 @@
 		459A177A17F5391000FFA6E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A177917F5391000FFA6E5 /* SystemConfiguration.framework */; };
 		459A177C17F5392900FFA6E5 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A177B17F5392900FFA6E5 /* libicucore.dylib */; };
 		459A179017F5398600FFA6E5 /* libPusher-combined.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A178F17F5398600FFA6E5 /* libPusher-combined.a */; };
+		C7F916E117F51060008DBC62 /* BeaconAdvertiser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */; };
+		C7F916E917F538B2008DBC62 /* BeaconFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F916E817F538B2008DBC62 /* BeaconFinder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,10 @@
 		459A178D17F5396300FFA6E5 /* PTPusherPresenceChannelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherPresenceChannelDelegate.h; sourceTree = "<group>"; };
 		459A178E17F5396300FFA6E5 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
 		459A178F17F5398600FFA6E5 /* libPusher-combined.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPusher-combined.a"; path = "LibPusher/libPusher-combined.a"; sourceTree = "<group>"; };
+		C7F916DF17F51060008DBC62 /* BeaconAdvertiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconAdvertiser.h; sourceTree = "<group>"; };
+		C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconAdvertiser.m; sourceTree = "<group>"; };
+		C7F916E717F538B2008DBC62 /* BeaconFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconFinder.h; sourceTree = "<group>"; };
+		C7F916E817F538B2008DBC62 /* BeaconFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconFinder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,10 @@
 				459A16C417F50BEB00FFA6E5 /* Main_iPad.storyboard */,
 				459A16C717F50BEB00FFA6E5 /* SBViewController.h */,
 				459A16C817F50BEB00FFA6E5 /* SBViewController.m */,
+				C7F916DF17F51060008DBC62 /* BeaconAdvertiser.h */,
+				C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */,
+				C7F916E717F538B2008DBC62 /* BeaconFinder.h */,
+				C7F916E817F538B2008DBC62 /* BeaconFinder.m */,
 				459A16CA17F50BEB00FFA6E5 /* Images.xcassets */,
 				459A16B617F50BEB00FFA6E5 /* Supporting Files */,
 			);
@@ -455,6 +465,8 @@
 				459A174D17F51B7500FFA6E5 /* AFHTTPRequestOperation.m in Sources */,
 				459A175517F51B7500FFA6E5 /* UIImageView+AFNetworking.m in Sources */,
 				459A16C917F50BEB00FFA6E5 /* SBViewController.m in Sources */,
+				C7F916E117F51060008DBC62 /* BeaconAdvertiser.m in Sources */,
+				C7F916E917F538B2008DBC62 /* BeaconFinder.m in Sources */,
 				459A16C017F50BEB00FFA6E5 /* SBAppDelegate.m in Sources */,
 				459A175117F51B7500FFA6E5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				459A175217F51B7500FFA6E5 /* AFPropertyListRequestOperation.m in Sources */,
@@ -602,12 +614,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundBump/SoundBump-Prefix.pch";
 				INFOPLIST_FILE = "SoundBump/SoundBump-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/tomelliott/Code/ObjectiveC/SoundBump,
-					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibDeezer,
-					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher,
-				);
+				LIBRARY_SEARCH_PATHS = "$SRCROOT/**";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-force_load",
@@ -627,16 +634,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundBump/SoundBump-Prefix.pch";
 				INFOPLIST_FILE = "SoundBump/SoundBump-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/tomelliott/Code/ObjectiveC/SoundBump,
-					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibDeezer,
-					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher,
-				);
-				OTHER_LDFLAGS = (
-					"-force_load",
-					"/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher/libPusher-combined.a",
-				);
+				LIBRARY_SEARCH_PATHS = "$SRCROOT/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
