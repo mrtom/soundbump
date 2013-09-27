@@ -10,15 +10,19 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+#import "PTPusher.h"
+
 static const NSString *kFacebookRawUUID = @"064149EF-EAD1-4CFD-BECD-E0544EF95F22";
 static const NSString *kFacebookPageRegionID = @"FacebookPage";
 static const NSString *kDeezerAppID = @"125081";
+static const NSString *kPusherAppKey = @"dcc6ab0c66a103f8d7e5";
 
 @interface SBViewController ()
 
 @property CLLocationManager *locationManager;
-@property(nonatomic, strong, readonly) NSUUID *facebookUUID;
+@property (nonatomic, strong, readonly) NSUUID *facebookUUID;
 @property (nonatomic, strong) UILabel *statusLabel;
+@property (nonatomic, strong) PTPusher *pusherClient;
 
 @end
 
@@ -68,9 +72,11 @@ static const NSString *kDeezerAppID = @"125081";
   // Connect with Deezer
   DeezerConnect *_deezerConnect = [[DeezerConnect alloc] initWithAppId:kDeezerAppID andDelegate:self];
   
-  /* List of permissions available from the Deezer SDK web site */
   NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"email", @"offline_access", nil];
   [_deezerConnect authorize:permissionsArray];
+  
+  // Setup Pusher
+  _pusherClient = [PTPusher pusherWithKey:kPusherAppKey delegate:self encrypted:YES];
 }
 
 - (void)viewDidUnload
@@ -151,7 +157,7 @@ static const NSString *kDeezerAppID = @"125081";
 
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
 {
-  NSLog(@"Did fail");
+  NSLog(@"Region monitoring did fail with error %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
@@ -162,7 +168,7 @@ static const NSString *kDeezerAppID = @"125081";
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error
 {
-  NSLog(@"did fail");
+  NSLog(@"Location manager did fail with warning %@", error);
 }
 
 #pragma mark - DeezerSessionDelegate methods
@@ -177,6 +183,38 @@ static const NSString *kDeezerAppID = @"125081";
 
 - (void)deezerDidLogout {
   NSLog(@"Deezer Did logout");
+}
+
+- (void)request:(DeezerRequest *)request didFailWithError:(NSError *)error
+{
+  NSLog(@"Deezer request failed with error %@", error);
+}
+
+- (void)request:(DeezerRequest *)request didReceiveResponse:(NSData *)response
+{
+  NSLog(@"Received response from Deezer");
+}
+
+#pragma mark - PTPusherDelegate methods
+
+- (void)pusher:(PTPusher *)pusher connectionDidConnect:(PTPusherConnection *)connection
+{
+  NSLog(@"Pusher connected");
+}
+
+- (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection didDisconnectWithError:(NSError *)error
+{
+  NSLog(@"Pusher disconnected with error %@", error);
+}
+
+- (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection failedWithError:(NSError *)error
+{
+  NSLog(@"Pusher failed with error %@", error);
+}
+
+- (void)pusher:(PTPusher *)pusher connectionWillReconnect:(PTPusherConnection *)connection afterDelay:(NSTimeInterval)delay
+{
+  NSLog(@"Pusher will try and reconnect, after a delay of %f seconds", delay);
 }
 
 @end

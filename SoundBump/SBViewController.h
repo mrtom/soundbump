@@ -10,11 +10,12 @@
 #import <CoreLocation/CLLocationManagerDelegate.h>
 
 #import "DeezerConnect.h"
+#import "PTPusherDelegate.h"
 
 @class DeezerUser;
 
 @protocol DeezerSessionConnectionDelegate;
 
-@interface SBViewController : UIViewController<CLLocationManagerDelegate, DeezerSessionDelegate, DeezerRequestDelegate>
+@interface SBViewController : UIViewController<CLLocationManagerDelegate, DeezerSessionDelegate, DeezerRequestDelegate, PTPusherDelegate>
 
 @end

@@ -35,6 +35,11 @@
 		459A175317F51B7500FFA6E5 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174717F51B7500FFA6E5 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		459A175417F51B7500FFA6E5 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174917F51B7500FFA6E5 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		459A175517F51B7500FFA6E5 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A174B17F51B7500FFA6E5 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459A177617F538F500FFA6E5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A177517F538F500FFA6E5 /* CFNetwork.framework */; };
+		459A177817F5390100FFA6E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A177717F5390100FFA6E5 /* Security.framework */; };
+		459A177A17F5391000FFA6E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A177917F5391000FFA6E5 /* SystemConfiguration.framework */; };
+		459A177C17F5392900FFA6E5 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A177B17F5392900FFA6E5 /* libicucore.dylib */; };
+		459A179017F5398600FFA6E5 /* libPusher-combined.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A178F17F5398600FFA6E5 /* libPusher-combined.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +105,28 @@
 		459A174917F51B7500FFA6E5 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		459A174A17F51B7500FFA6E5 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		459A174B17F51B7500FFA6E5 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		459A177517F538F500FFA6E5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		459A177717F5390100FFA6E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		459A177917F5391000FFA6E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		459A177B17F5392900FFA6E5 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		459A177E17F5396300FFA6E5 /* PTEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEventListener.h; sourceTree = "<group>"; };
+		459A177F17F5396300FFA6E5 /* PTJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTJSON.h; sourceTree = "<group>"; };
+		459A178017F5396300FFA6E5 /* PTJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTJSONParser.h; sourceTree = "<group>"; };
+		459A178117F5396300FFA6E5 /* PTPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusher.h; sourceTree = "<group>"; };
+		459A178217F5396300FFA6E5 /* PTPusher+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PTPusher+Testing.h"; sourceTree = "<group>"; };
+		459A178317F5396300FFA6E5 /* PTPusherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherAPI.h; sourceTree = "<group>"; };
+		459A178417F5396300FFA6E5 /* PTPusherChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherChannel.h; sourceTree = "<group>"; };
+		459A178517F5396300FFA6E5 /* PTPusherConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherConnection.h; sourceTree = "<group>"; };
+		459A178617F5396300FFA6E5 /* PTPusherDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherDelegate.h; sourceTree = "<group>"; };
+		459A178717F5396300FFA6E5 /* PTPusherErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherErrors.h; sourceTree = "<group>"; };
+		459A178817F5396300FFA6E5 /* PTPusherEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherEvent.h; sourceTree = "<group>"; };
+		459A178917F5396300FFA6E5 /* PTPusherEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherEventDispatcher.h; sourceTree = "<group>"; };
+		459A178A17F5396300FFA6E5 /* PTPusherEventPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherEventPublisher.h; sourceTree = "<group>"; };
+		459A178B17F5396300FFA6E5 /* PTPusherMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherMacros.h; sourceTree = "<group>"; };
+		459A178C17F5396300FFA6E5 /* PTPusherMockConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherMockConnection.h; sourceTree = "<group>"; };
+		459A178D17F5396300FFA6E5 /* PTPusherPresenceChannelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherPresenceChannelDelegate.h; sourceTree = "<group>"; };
+		459A178E17F5396300FFA6E5 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		459A178F17F5398600FFA6E5 /* libPusher-combined.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPusher-combined.a"; path = "LibPusher/libPusher-combined.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +134,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459A179017F5398600FFA6E5 /* libPusher-combined.a in Frameworks */,
+				459A177C17F5392900FFA6E5 /* libicucore.dylib in Frameworks */,
+				459A177A17F5391000FFA6E5 /* SystemConfiguration.framework in Frameworks */,
+				459A177817F5390100FFA6E5 /* Security.framework in Frameworks */,
+				459A177617F538F500FFA6E5 /* CFNetwork.framework in Frameworks */,
 				459A170417F5169A00FFA6E5 /* libDeezer.a in Frameworks */,
 				459A16B217F50BEB00FFA6E5 /* CoreGraphics.framework in Frameworks */,
 				459A16B417F50BEB00FFA6E5 /* UIKit.framework in Frameworks */,
@@ -136,6 +168,7 @@
 				459A16D717F50BEB00FFA6E5 /* SoundBumpTests */,
 				459A16AE17F50BEB00FFA6E5 /* Frameworks */,
 				459A16AD17F50BEB00FFA6E5 /* Products */,
+				459A177D17F5394100FFA6E5 /* LibPusher */,
 				459A16F617F5165500FFA6E5 /* LibDeezer */,
 			);
 			sourceTree = "<group>";
@@ -152,6 +185,11 @@
 		459A16AE17F50BEB00FFA6E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				459A178F17F5398600FFA6E5 /* libPusher-combined.a */,
+				459A177B17F5392900FFA6E5 /* libicucore.dylib */,
+				459A177917F5391000FFA6E5 /* SystemConfiguration.framework */,
+				459A177717F5390100FFA6E5 /* Security.framework */,
+				459A177517F538F500FFA6E5 /* CFNetwork.framework */,
 				459A16AF17F50BEB00FFA6E5 /* Foundation.framework */,
 				459A16B117F50BEB00FFA6E5 /* CoreGraphics.framework */,
 				459A16B317F50BEB00FFA6E5 /* UIKit.framework */,
@@ -281,6 +319,30 @@
 				459A174B17F51B7500FFA6E5 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		459A177D17F5394100FFA6E5 /* LibPusher */ = {
+			isa = PBXGroup;
+			children = (
+				459A177E17F5396300FFA6E5 /* PTEventListener.h */,
+				459A177F17F5396300FFA6E5 /* PTJSON.h */,
+				459A178017F5396300FFA6E5 /* PTJSONParser.h */,
+				459A178117F5396300FFA6E5 /* PTPusher.h */,
+				459A178217F5396300FFA6E5 /* PTPusher+Testing.h */,
+				459A178317F5396300FFA6E5 /* PTPusherAPI.h */,
+				459A178417F5396300FFA6E5 /* PTPusherChannel.h */,
+				459A178517F5396300FFA6E5 /* PTPusherConnection.h */,
+				459A178617F5396300FFA6E5 /* PTPusherDelegate.h */,
+				459A178717F5396300FFA6E5 /* PTPusherErrors.h */,
+				459A178817F5396300FFA6E5 /* PTPusherEvent.h */,
+				459A178917F5396300FFA6E5 /* PTPusherEventDispatcher.h */,
+				459A178A17F5396300FFA6E5 /* PTPusherEventPublisher.h */,
+				459A178B17F5396300FFA6E5 /* PTPusherMacros.h */,
+				459A178C17F5396300FFA6E5 /* PTPusherMockConnection.h */,
+				459A178D17F5396300FFA6E5 /* PTPusherPresenceChannelDelegate.h */,
+				459A178E17F5396300FFA6E5 /* SRWebSocket.h */,
+			);
+			path = LibPusher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,8 +606,13 @@
 					"$(inherited)",
 					/Users/tomelliott/Code/ObjectiveC/SoundBump,
 					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibDeezer,
+					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher,
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher/libPusher-combined.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
@@ -564,6 +631,11 @@
 					"$(inherited)",
 					/Users/tomelliott/Code/ObjectiveC/SoundBump,
 					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibDeezer,
+					/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher,
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher/libPusher-combined.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7";
