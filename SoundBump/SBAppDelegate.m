@@ -7,12 +7,22 @@
 //
 
 #import "SBAppDelegate.h"
+#import "BeaconAdvertiser.h"
+
+@interface SBAppDelegate ()
+@property (nonatomic, strong) BeaconAdvertiser *beaconAdvertiser;
+@end
 
 @implementation SBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
+  self.beaconAdvertiser = [[BeaconAdvertiser alloc] init];
+  [self.beaconAdvertiser start];
+
+  
     return YES;
 }
 							

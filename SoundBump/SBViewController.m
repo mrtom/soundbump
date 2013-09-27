@@ -53,6 +53,8 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
   
   self.locationManager = [CLLocationManager new];
   self.locationManager.delegate = self;
+  self.view.backgroundColor = [UIColor blackColor];
+
   
   UILabel *statusLabel = [[UILabel alloc] init];
   statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -102,6 +104,7 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
 {
   NSLog(@"Exited Beacon region!");
+  self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -115,13 +118,15 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
     // the user is relatively close to the exhibit.
     CLProximity proximity = nearestExhibit.proximity;
     if (proximity == CLProximityImmediate) {
-      self.statusLabel.text = @"Say 'HI' to Philip Su!!!";
       self.view.backgroundColor = [UIColor greenColor];
     }
+    else if (proximity == CLProximityUnknown) {
+      self.view.backgroundColor = [UIColor blackColor];
+    }
     else {
-      self.statusLabel.text = @"Say 'BYE' to Philip Su.  :(";
       self.view.backgroundColor = [UIColor redColor];
     }
+    self.statusLabel.text = [NSString stringWithFormat:@"%d", proximity];
     NSLog(@"proximity = %d", nearestExhibit.proximity);
     
     //    if (CLProximityNear == nearestExhibit.proximity) {
@@ -139,6 +144,9 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
   NSLog(@"Did determine state %d", state);
   if (state == CLRegionStateInside) {
     NSLog(@"Found!");
+  }
+  else if (state == CLRegionStateOutside) {
+    self.view.backgroundColor = [UIColor blackColor];
   }
 }
 
