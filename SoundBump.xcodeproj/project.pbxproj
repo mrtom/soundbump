@@ -646,7 +646,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"/Users/tomelliott/Code/ObjectiveC/SoundBump/LibPusher/libPusher-combined.a",
+					"$SRCROOT/LibPusher/libPusher-combined.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7";
