@@ -23,6 +23,7 @@
 		459A16DC17F50BEB00FFA6E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459A16DA17F50BEB00FFA6E5 /* InfoPlist.strings */; };
 		459A16DE17F50BEB00FFA6E5 /* SoundBumpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A16DD17F50BEB00FFA6E5 /* SoundBumpTests.m */; };
 		C7F916E117F51060008DBC62 /* BeaconAdvertiser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */; };
+		C7F916E917F538B2008DBC62 /* BeaconFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F916E817F538B2008DBC62 /* BeaconFinder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		459A16DD17F50BEB00FFA6E5 /* SoundBumpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundBumpTests.m; sourceTree = "<group>"; };
 		C7F916DF17F51060008DBC62 /* BeaconAdvertiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconAdvertiser.h; sourceTree = "<group>"; };
 		C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconAdvertiser.m; sourceTree = "<group>"; };
+		C7F916E717F538B2008DBC62 /* BeaconFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconFinder.h; sourceTree = "<group>"; };
+		C7F916E817F538B2008DBC62 /* BeaconFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconFinder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				459A16C817F50BEB00FFA6E5 /* SBViewController.m */,
 				C7F916DF17F51060008DBC62 /* BeaconAdvertiser.h */,
 				C7F916E017F51060008DBC62 /* BeaconAdvertiser.m */,
+				C7F916E717F538B2008DBC62 /* BeaconFinder.h */,
+				C7F916E817F538B2008DBC62 /* BeaconFinder.m */,
 				459A16CA17F50BEB00FFA6E5 /* Images.xcassets */,
 				459A16B617F50BEB00FFA6E5 /* Supporting Files */,
 			);
@@ -262,6 +267,7 @@
 				459A16BC17F50BEB00FFA6E5 /* main.m in Sources */,
 				459A16C917F50BEB00FFA6E5 /* SBViewController.m in Sources */,
 				C7F916E117F51060008DBC62 /* BeaconAdvertiser.m in Sources */,
+				C7F916E917F538B2008DBC62 /* BeaconFinder.m in Sources */,
 				459A16C017F50BEB00FFA6E5 /* SBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <CoreLocation/CLLocationManagerDelegate.h>
-
-@interface SBViewController : UIViewController<CLLocationManagerDelegate>
+@interface SBViewController : UIViewController
 
 @end

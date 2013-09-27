@@ -44,7 +44,7 @@
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral;
 {
-  NSLog(@"peripheral %@, state = %d", peripheral, peripheral.state);
+  NSLog(@"peripheral %@, state = %d", peripheral, (int)peripheral.state);
   if (peripheral.state == 5) {
     self.region = [[CLBeaconRegion alloc] initWithProximityUUID:self.uuid major:self.major minor:self.minor identifier:self.identifier];
     NSDictionary *peripheralData = [self.region peripheralDataWithMeasuredPower:@-60];
