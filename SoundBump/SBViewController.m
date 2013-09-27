@@ -12,6 +12,7 @@
 
 static const NSString *kFacebookRawUUID = @"064149EF-EAD1-4CFD-BECD-E0544EF95F22";
 static const NSString *kFacebookPageRegionID = @"FacebookPage";
+static const NSString *kDeezerAppID = @"125081";
 
 @interface SBViewController ()
 
@@ -43,7 +44,6 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
 
 - (void)initCommon
 {
-  // Use string with format to get rid of pointer warnings
   _facebookUUID = [[NSUUID alloc] initWithUUIDString:kFacebookRawUUID];
 }
 
@@ -64,6 +64,13 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
   self.statusLabel = statusLabel;
   
   [self registerBeaconRegionWithUUID:_facebookUUID andIdentifier:[NSString stringWithFormat:@"%@", kFacebookPageRegionID]];
+  
+  // Connect with Deezer
+  DeezerConnect *_deezerConnect = [[DeezerConnect alloc] initWithAppId:kDeezerAppID andDelegate:self];
+  
+  /* List of permissions available from the Deezer SDK web site */
+  NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"email", @"offline_access", nil];
+  [_deezerConnect authorize:permissionsArray];
 }
 
 - (void)viewDidUnload
@@ -158,5 +165,18 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
   NSLog(@"did fail");
 }
 
+#pragma mark - DeezerSessionDelegate methods
+
+- (void)deezerDidLogin {
+  NSLog(@"Deezer did login");
+}
+
+- (void)deezerDidNotLogin:(BOOL)cancelled {
+  NSLog(@"Deezer Did not login %@", cancelled ? @"Cancelled" : @"Not Cancelled");
+}
+
+- (void)deezerDidLogout {
+  NSLog(@"Deezer Did logout");
+}
 
 @end

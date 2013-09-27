@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <CoreLocation/CLLocationManagerDelegate.h>
 
-@interface SBViewController : UIViewController<CLLocationManagerDelegate>
+#import "DeezerConnect.h"
+
+@class DeezerUser;
+
+@protocol DeezerSessionConnectionDelegate;
+
+@interface SBViewController : UIViewController<CLLocationManagerDelegate, DeezerSessionDelegate, DeezerRequestDelegate>
 
 @end
